@@ -46,9 +46,9 @@ func (gateway *SmsGateway) SendSmsOtp(req *VerihubsSmsOtpRequest) (response *Ver
 }
 
 // VerifySmsOtp Verify SMS OTP
-func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsSmsOtpVerifyRequest) (response *VerihubsSmsOtpVerifyResponse, err error) {
+func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response *VerihubsOtpVerifyResponse, err error) {
 	log := clog.Get()
-	resp := VerihubsSmsOtpVerifyResponse{}
+	resp := VerihubsOtpVerifyResponse{}
 	jsonReq, _ := json.Marshal(req)
 
 	path := gateway.Client.APIEnvType.CreateSmsOtpVerifyURL()

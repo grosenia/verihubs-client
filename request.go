@@ -20,7 +20,7 @@ type VerihubsSmsOtpRequest struct {
 }
 
 // VerifySmsOtpVerihubs
-type VerihubsSmsOtpVerifyRequest struct {
+type VerihubsOtpVerifyRequest struct {
 	OTP       string `json:"otp"`
 	MSISDN    string `json:"msisdn"`
 	Challenge string `json:"challenge"`
@@ -37,11 +37,4 @@ type VerihubsWhatsappOtpRequest struct {
 	TemplateName string   `json:"template_name"`
 	//OtpLength    string   `json:"otp_length"`
 	//CallbackUrl string `json:"callback_url"`
-}
-
-// VerifyWhatsappOtpVerihubs
-type VerihubsWhatsappOtpVerifyRequest struct {
-	OTP       string `json:"otp"`
-	MSISDN    string `json:"msisdn"`
-	Challenge string `json:"challenge"`
 }

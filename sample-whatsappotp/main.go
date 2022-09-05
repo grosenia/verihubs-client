@@ -27,7 +27,7 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "62839102839"
+	MSISDN := "628002"
 	Content := []string{
 		"This is your OTP Code {{1}}. Please use only in {{2}}",
 	}
@@ -47,16 +47,15 @@ func main() {
 		//OtpLength:    OtpLength,
 		TemplateName: TemplateName,
 	}
-	fmt.Println("INI :", request)
 
-	resp, err := whatsappGateway.SendWhatsappOtp(request)
+	resp, err := whatsappGateway.SendWhatsAppOtp(request)
 
 	if err != nil {
 		fmt.Println("Error server")
 		return
 	}
 
-	if resp.ErrorStatus {
+	if resp.ErrorStatus && resp.Code != 201 {
 		// Ada error
 		fmt.Println("Error: ", resp.Error())
 		return
@@ -69,12 +68,12 @@ func main() {
 
 	fmt.Println("Test Verify Fail: ")
 
-	var verifyRequest = &verihubsgo.VerihubsWhatsappOtpVerifyRequest{
+	var verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
 		OTP:       OTP,
 		Challenge: Challenge,
 	}
-	respVerify, err := whatsappGateway.VerifyWhatsappOtp(verifyRequest)
+	respVerify, err := whatsappGateway.VerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")
@@ -92,12 +91,12 @@ func main() {
 	fmt.Println("Error Info: ", respVerify.Message)
 
 	fmt.Println("Test Verify Success: ")
-	verifyRequest = &verihubsgo.VerihubsWhatsappOtpVerifyRequest{
+	verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
 		OTP:       OTP,
 		Challenge: Challenge,
 	}
-	respVerifySuccess, err := whatsappGateway.VerifyWhatsappOtp(verifyRequest)
+	respVerifySuccess, err := whatsappGateway.VerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")

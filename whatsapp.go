@@ -14,7 +14,7 @@ type WhatsappGateway struct {
 }
 
 // SendSmsOtp send sms for OTP
-func (gateway *WhatsappGateway) SendWhatsappOtp(req *VerihubsWhatsappOtpRequest) (response *VerihubsWhatsappOtpResponse, err error) {
+func (gateway *WhatsappGateway) SendWhatsAppOtp(req *VerihubsWhatsappOtpRequest) (response *VerihubsWhatsappOtpResponse, err error) {
 	log := clog.Get()
 	resp := VerihubsWhatsappOtpResponse{}
 	jsonReq, _ := json.Marshal(req)
@@ -46,9 +46,9 @@ func (gateway *WhatsappGateway) SendWhatsappOtp(req *VerihubsWhatsappOtpRequest)
 }
 
 // VerifySmsOtp Verify SMS OTP
-func (gateway *WhatsappGateway) VerifyWhatsappOtp(req *VerihubsWhatsappOtpVerifyRequest) (response *VerihubsWhatsappOtpVerifyResponse, err error) {
+func (gateway *WhatsappGateway) VerifyOtp(req *VerihubsOtpVerifyRequest) (response *VerihubsOtpVerifyResponse, err error) {
 	log := clog.Get()
-	resp := VerihubsWhatsappOtpVerifyResponse{}
+	resp := VerihubsOtpVerifyResponse{}
 	jsonReq, _ := json.Marshal(req)
 
 	path := gateway.Client.APIEnvType.CreateWhatsappOtpVerifyURL()

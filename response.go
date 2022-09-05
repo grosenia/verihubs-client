@@ -47,13 +47,13 @@ func (e VerihubsSmsOtpResponse) Error() string {
 }
 
 // VerihubsSmsOtpVerifyResponse Verihubs SMSOTP Verify Response
-type VerihubsSmsOtpVerifyResponse struct {
+type VerihubsOtpVerifyResponse struct {
 	Code        FlexInt `json:"code"`
 	Message     string  `json:"message"`
 	ErrorStatus bool    `json:"-"`
 }
 
-func (e VerihubsSmsOtpVerifyResponse) Error() string {
+func (e VerihubsOtpVerifyResponse) Error() string {
 	return fmt.Sprintf("[%d] %s", e.Code, e.Message)
 }
 
@@ -69,16 +69,5 @@ type VerihubsWhatsappOtpResponse struct {
 }
 
 func (e VerihubsWhatsappOtpResponse) Error() string {
-	return fmt.Sprintf("[%d] %s", e.Code, e.Message)
-}
-
-// VerihubsWhatsappOtpVerifyResponse Verihubs WhatsappOTP Verify Response
-type VerihubsWhatsappOtpVerifyResponse struct {
-	Code        FlexInt `json:"code"`
-	Message     string  `json:"message"`
-	ErrorStatus bool    `json:"-"`
-}
-
-func (e VerihubsWhatsappOtpVerifyResponse) Error() string {
 	return fmt.Sprintf("[%d] %s", e.Code, e.Message)
 }

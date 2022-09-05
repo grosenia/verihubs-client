@@ -61,7 +61,7 @@ func main() {
 
 	fmt.Println("Test Verify Fail: ")
 
-	var verifyRequest = &verihubsgo.VerihubsSmsOtpVerifyRequest{
+	var verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
 		OTP:       OTP,
 		Challenge: Challenge,
@@ -84,7 +84,7 @@ func main() {
 	fmt.Println("Error Info: ", respVerify.Message)
 
 	fmt.Println("Test Verify Success: ")
-	verifyRequest = &verihubsgo.VerihubsSmsOtpVerifyRequest{
+	verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
 		OTP:       OTP,
 		Challenge: Challenge,
