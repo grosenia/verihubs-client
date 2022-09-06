@@ -31,17 +31,20 @@ func (gateway *SmsGateway) SendSmsOtp(req *VerihubsSmsOtpRequest) (response *Ver
 		log.Error("Error charging ", err)
 		return nil, err
 	}
-
-	if httpStatus != 200 || httpStatus != 201 {
+	log.Debugf("STATUSS", httpStatus)
+	if httpStatus != 201 {
 		resp.ErrorStatus = true
+		log.Debugf("11111111111")
 	} else {
 		if resp.Code != VerihubsDelivered {
 			resp.ErrorStatus = true
+			log.Debugf("222222222222")
 		} else {
 			resp.ErrorStatus = false
+			log.Debugf("333333")
 		}
 	}
-
+	log.Debugf("444444444")
 	return &resp, nil
 }
 
@@ -95,7 +98,7 @@ func (gateway *SmsGateway) SendWhatsAppOtp(req *VerihubsWhatsappOtpRequest) (res
 		return nil, err
 	}
 
-	if httpStatus != 200 || httpStatus != 201 {
+	if httpStatus != 201 {
 		resp.ErrorStatus = true
 	} else {
 		if resp.Code != VerihubsDelivered {
