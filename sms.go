@@ -32,7 +32,7 @@ func (gateway *SmsGateway) SendSmsOtp(req *VerihubsSmsOtpRequest) (response *Ver
 		return nil, err
 	}
 
-	if httpStatus != 200 {
+	if httpStatus != 200 || httpStatus != 201 {
 		resp.ErrorStatus = true
 	} else {
 		if resp.Code != VerihubsDelivered {
@@ -95,7 +95,7 @@ func (gateway *SmsGateway) SendWhatsAppOtp(req *VerihubsWhatsappOtpRequest) (res
 		return nil, err
 	}
 
-	if httpStatus != 200 {
+	if httpStatus != 200 || httpStatus != 201 {
 		resp.ErrorStatus = true
 	} else {
 		if resp.Code != VerihubsDelivered {
