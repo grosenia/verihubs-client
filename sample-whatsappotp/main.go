@@ -8,7 +8,7 @@ import (
 )
 
 var verihubsClient verihubsgo.Client
-var whatsappGateway verihubsgo.WhatsappGateway
+var SmsGateway verihubsgo.SmsGateway
 
 func main() {
 	fmt.Println("Load Config...")
@@ -48,7 +48,7 @@ func main() {
 		TemplateName: TemplateName,
 	}
 
-	resp, err := whatsappGateway.SendWhatsAppOtp(request)
+	resp, err := SmsGateway.SendWhatsAppOtp(request)
 
 	if err != nil {
 		fmt.Println("Error server")
@@ -73,7 +73,7 @@ func main() {
 		OTP:       OTP,
 		Challenge: Challenge,
 	}
-	respVerify, err := whatsappGateway.VerifyOtp(verifyRequest)
+	respVerify, err := SmsGateway.VerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")
@@ -96,7 +96,7 @@ func main() {
 		OTP:       OTP,
 		Challenge: Challenge,
 	}
-	respVerifySuccess, err := whatsappGateway.VerifyOtp(verifyRequest)
+	respVerifySuccess, err := SmsGateway.VerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")
@@ -125,7 +125,7 @@ func setupClient() {
 	verihubsClient.APIEnvType = verihubsgo.Sandbox
 	verihubsClient.LogLevel = 3
 
-	whatsappGateway = verihubsgo.WhatsappGateway{
+	SmsGateway = verihubsgo.SmsGateway{
 		Client: verihubsClient,
 	}
 }

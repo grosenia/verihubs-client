@@ -76,3 +76,66 @@ func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response
 
 	return &resp, nil
 }
+
+func (gateway *SmsGateway) SendWhatsAppOtp(req *VerihubsWhatsappOtpRequest) (response *VerihubsWhatsappOtpResponse, err error) {
+	log := clog.Get()
+	resp := VerihubsWhatsappOtpResponse{}
+	jsonReq, _ := json.Marshal(req)
+
+	path := gateway.Client.APIEnvType.CreateWhatsappOtpURL()
+	httpRequest, err := gateway.Client.NewRequest("POST", path, bytes.NewBuffer(jsonReq))
+
+	if err != nil {
+		return nil, err
+	}
+
+	httpStatus, err := gateway.Client.ExecuteRequest(httpRequest, &resp)
+	if err != nil {
+		log.Error("Error charging ", err)
+		return nil, err
+	}
+
+	if httpStatus != 200 {
+		resp.ErrorStatus = true
+	} else {
+		if resp.Code != VerihubsDelivered {
+			resp.ErrorStatus = true
+		} else {
+			resp.ErrorStatus = false
+		}
+	}
+
+	return &resp, nil
+}
+
+// VerifySmsOtp Verify SMS OTP
+func (gateway *SmsGateway) VerifyOtp(req *VerihubsOtpVerifyRequest) (response *VerihubsOtpVerifyResponse, err error) {
+	log := clog.Get()
+	resp := VerihubsOtpVerifyResponse{}
+	jsonReq, _ := json.Marshal(req)
+
+	path := gateway.Client.APIEnvType.CreateWhatsappOtpVerifyURL()
+	httpRequest, err := gateway.Client.NewRequest("POST", path, bytes.NewBuffer(jsonReq))
+
+	if err != nil {
+		return nil, err
+	}
+
+	httpStatus, err := gateway.Client.ExecuteRequest(httpRequest, &resp)
+	if err != nil {
+		log.Error("Error charging ", err)
+		return nil, err
+	}
+
+	if httpStatus != 200 {
+		resp.ErrorStatus = true
+	} else {
+		if resp.Code != VerihubsDelivered {
+			resp.ErrorStatus = true
+		} else {
+			resp.ErrorStatus = false
+		}
+	}
+
+	return &resp, nil
+}
