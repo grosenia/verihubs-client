@@ -72,14 +72,18 @@ func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response
 	}
 	log.Debugf("STATUSS", httpStatus)
 	if httpStatus != 200 {
+		log.Debugf("xxxxxxx")
 		resp.ErrorStatus = true
 	} else {
 		if resp.Code != VerihubsDelivered {
+			log.Debugf("yyyyyy")
 			resp.ErrorStatus = true
 		} else {
+			log.Debugf("zzzzzz")
 			resp.ErrorStatus = false
 		}
 	}
+	log.Debugf("bbbbbb")
 
 	return &resp, nil
 }
