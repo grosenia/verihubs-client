@@ -51,22 +51,26 @@ func (gateway *SmsGateway) SendSmsOtp(req *VerihubsSmsOtpRequest) (response *Ver
 // VerifySmsOtp Verify SMS OTP
 func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response *VerihubsOtpVerifyResponse, err error) {
 	log := clog.Get()
+	log.Debugf("55555555555")
 	resp := VerihubsOtpVerifyResponse{}
 	jsonReq, _ := json.Marshal(req)
 
 	path := gateway.Client.APIEnvType.CreateSmsOtpVerifyURL()
+	log.Debugf("66666666666")
 	httpRequest, err := gateway.Client.NewRequest("POST", path, bytes.NewBuffer(jsonReq))
+	log.Debugf("77777777777")
 
 	if err != nil {
 		return nil, err
 	}
 
 	httpStatus, err := gateway.Client.ExecuteRequest(httpRequest, &resp)
+	log.Debugf("888888888")
 	if err != nil {
 		log.Error("Error charging ", err)
 		return nil, err
 	}
-
+	log.Debugf("STATUSS", httpStatus)
 	if httpStatus != 200 {
 		resp.ErrorStatus = true
 	} else {
