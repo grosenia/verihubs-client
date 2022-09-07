@@ -1,13 +1,13 @@
 package verihubsgo
 
 const (
-	VerihubsRequested    = 0
-	VerihubsDelivered    = 1
-	VerihubsFailed       = 4
-	VerihubsRequestError = 5
-	VerihubsUndelivered  = 7
-	VerihubsROTDR        = 8
-	VErihubsBlocked      = 9
+	VerihubsSuccess        = 200
+	VerihubsSuccessRequest = 201
+	VerihubsBadRequest     = 400
+	VerihubsForbidden      = 403
+	VerihubsConflict       = 409
+	VerihubsTooManyReq     = 429
+	VerihubsInternalError  = 500
 )
 
 // VerihubsSmsOtpRequest Verihubs SMSOTP Request

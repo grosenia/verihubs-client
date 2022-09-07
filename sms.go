@@ -32,18 +32,14 @@ func (gateway *SmsGateway) SendSmsOtp(req *VerihubsSmsOtpRequest) (response *Ver
 		return nil, err
 	}
 	log.Debugf("STATUSS", httpStatus)
-	if httpStatus != 201 {
+	if httpStatus != VerihubsSuccessRequest {
 		resp.ErrorStatus = true
 		log.Debugf("11111111111")
 	} else {
-		if resp.Code != VerihubsDelivered {
-			resp.ErrorStatus = true
-			log.Debugf("222222222222")
-		} else {
-			resp.ErrorStatus = false
-			log.Debugf("333333")
-		}
+		resp.ErrorStatus = false
+		log.Debugf("333333")
 	}
+
 	log.Debugf("444444444")
 	return &resp, nil
 }
@@ -71,18 +67,14 @@ func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response
 		return nil, err
 	}
 	log.Debugf("STATUSS", httpStatus)
-	if httpStatus != 200 {
-		log.Debugf("xxxxxxx")
+	if httpStatus != VerihubsSuccess {
+		log.Debugf("yyyyyy")
 		resp.ErrorStatus = true
 	} else {
-		if resp.Code != VerihubsDelivered {
-			log.Debugf("yyyyyy")
-			resp.ErrorStatus = true
-		} else {
-			log.Debugf("zzzzzz")
-			resp.ErrorStatus = false
-		}
+		log.Debugf("zzzzzz")
+		resp.ErrorStatus = false
 	}
+
 	log.Debugf("bbbbbb")
 
 	return &resp, nil
@@ -106,14 +98,10 @@ func (gateway *SmsGateway) SendWhatsAppOtp(req *VerihubsWhatsappOtpRequest) (res
 		return nil, err
 	}
 
-	if httpStatus != 201 {
+	if httpStatus != VerihubsSuccessRequest {
 		resp.ErrorStatus = true
 	} else {
-		if resp.Code != VerihubsDelivered {
-			resp.ErrorStatus = true
-		} else {
-			resp.ErrorStatus = false
-		}
+		resp.ErrorStatus = false
 	}
 
 	return &resp, nil
@@ -138,14 +126,10 @@ func (gateway *SmsGateway) VerifyOtp(req *VerihubsOtpVerifyRequest) (response *V
 		return nil, err
 	}
 
-	if httpStatus != 200 {
+	if httpStatus != VerihubsSuccess {
 		resp.ErrorStatus = true
 	} else {
-		if resp.Code != VerihubsDelivered {
-			resp.ErrorStatus = true
-		} else {
-			resp.ErrorStatus = false
-		}
+		resp.ErrorStatus = false
 	}
 
 	return &resp, nil
