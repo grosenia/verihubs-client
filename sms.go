@@ -59,7 +59,6 @@ func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response
 		log.Error("Error charging ", err)
 		return nil, err
 	}
-	log.Debugf("STATUSS", httpStatus)
 	if httpStatus != VerihubsSuccess {
 		resp.ErrorStatus = true
 	} else {

@@ -8,7 +8,7 @@ import (
 )
 
 var verihubsClient verihubsgo.Client
-var SmsGateway verihubsgo.SmsGateway
+var smsGateway verihubsgo.SmsGateway
 
 func main() {
 	fmt.Println("Load Config...")
@@ -26,54 +26,43 @@ func main() {
 
 	setupClient()
 
-	// Example
-	MSISDN := "628002"
-	Content := []string{
-		"This is your OTP Code {{1}}. Please use only in {{2}}",
-	}
-	OTP := "234123"
+	MSISDN := "6287771311133"
+	OTP := "9021"
 	TimeLimit := "300" // 5 minutes
 	Challenge := "update_account"
-	LangCode := "en"
-	TemplateName := "send_otp_template"
 
-	var request = &verihubsgo.VerihubsWhatsappOtpRequest{
+	var request = &verihubsgo.VerihubsMisscallOtpRequest{
 		MSISDN:    MSISDN,
-		Content:   Content,
 		OTP:       OTP,
 		Challenge: Challenge,
 		TimeLimit: TimeLimit,
-		LangCode:  LangCode,
-		//OtpLength:    OtpLength,
-		TemplateName: TemplateName,
 	}
 
-	resp, err := SmsGateway.SendWhatsAppOtp(request)
+	resp, err := smsGateway.RequestMiscallOtp(request)
 
 	if err != nil {
 		fmt.Println("Error server")
 		return
 	}
 
-	if resp.ErrorStatus && resp.Code != 201 {
+	if resp.ErrorStatus {
 		// Ada error
 		fmt.Println("Error: ", resp.Error())
 		return
 	}
 
-	fmt.Println("Verihubs response: ")
-	fmt.Println(resp)
-	fmt.Println("TrxID: ", resp.SessionId)
+	fmt.Println("Citcall response: ")
+	// fmt.Println(resp)
+	fmt.Println("Code: ", resp.Code)
+	fmt.Println("SessionId: ", resp.SessionId)
 	fmt.Println("Token: ", resp.OTP)
-
-	fmt.Println("Test Verify Fail: ")
 
 	var verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
 		OTP:       OTP,
 		Challenge: Challenge,
 	}
-	respVerify, err := SmsGateway.VerifySmsOtp(verifyRequest)
+	respVerify, err := smsGateway.RequestMiscallVerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")
@@ -93,10 +82,10 @@ func main() {
 	fmt.Println("Test Verify Success: ")
 	verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
-		OTP:       OTP,
+		OTP:       "6755",
 		Challenge: Challenge,
 	}
-	respVerifySuccess, err := SmsGateway.VerifyOtp(verifyRequest)
+	respVerifySuccess, err := smsGateway.RequestMiscallVerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")
@@ -125,7 +114,7 @@ func setupClient() {
 	verihubsClient.APIEnvType = verihubsgo.Sandbox
 	verihubsClient.LogLevel = 3
 
-	SmsGateway = verihubsgo.SmsGateway{
+	smsGateway = verihubsgo.SmsGateway{
 		Client: verihubsClient,
 	}
 }

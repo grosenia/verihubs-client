@@ -38,3 +38,11 @@ type VerihubsWhatsappOtpRequest struct {
 	//OtpLength    string   `json:"otp_length"`
 	//CallbackUrl string `json:"callback_url"`
 }
+
+// VerihubsMiscallOtpRequest Verihubs misscallOTP Request
+type VerihubsMisscallOtpRequest struct {
+	MSISDN    string `json:"msisdn"`
+	OTP       string `json:"otp"`
+	TimeLimit string `json:"time_limit"`
+	Challenge string `json:"challenge"`
+}

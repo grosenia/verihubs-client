@@ -71,3 +71,18 @@ type VerihubsWhatsappOtpResponse struct {
 func (e VerihubsWhatsappOtpResponse) Error() string {
 	return fmt.Sprintf("[%d] %s", e.Code, e.Message)
 }
+
+// VerihubsSmsOtpResponse Verihubs SMSOTP Response
+type VerihubsMisscallOtpResponse struct {
+	Code        FlexInt `json:"code"`
+	Message     string  `json:"message"`
+	OTP         string  `json:"otp"`
+	MSISDN      string  `json:"msisdn"`
+	SessionId   string  `json:"session_id"`
+	TryCount    int     `json:"try_count"`
+	ErrorStatus bool    `json:"-"`
+}
+
+func (e VerihubsMisscallOtpResponse) Error() string {
+	return fmt.Sprintf("[%d] %s", e.Code, e.Message)
+}
