@@ -51,11 +51,10 @@ func main() {
 		return
 	}
 
-	fmt.Println("Citcall response: ")
+	fmt.Println("Citcall response: ", resp)
 	// fmt.Println(resp)
-	fmt.Println("Code: ", resp.Code)
-	fmt.Println("SessionId: ", resp.SessionId)
-	fmt.Println("Token: ", resp.OTP)
+	//fmt.Println("Code: ", resp.Code)
+	fmt.Println("SessionId: ", resp.Data.SessionId)
 
 	var verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
@@ -82,7 +81,7 @@ func main() {
 	fmt.Println("Test Verify Success: ")
 	verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
-		OTP:       "6755",
+		OTP:       "9021",
 		Challenge: Challenge,
 	}
 	respVerifySuccess, err := smsGateway.RequestMiscallVerifyOtp(verifyRequest)

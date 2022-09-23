@@ -1,0 +1,32 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+var data = `{"message":"success","data":[{"id":"99c9babe-b0fc-422c-bb9c-6cda1ce3f942","status":"0"}]}`
+
+type VerihubsMisscallOtpResponse struct {
+	Data struct {
+		Id     string `json:"id"`
+		Status string `json:"status"`
+	}
+	Message     string `json:"message"`
+	ErrorStatus bool   `json:"-"`
+}
+
+// type Data struct {
+// 	SessionId string `json:"id"`
+// 	Status    string `json:"status"`
+// }
+
+func main() {
+	res := &VerihubsMisscallOtpResponse{}
+	err := json.Unmarshal([]byte(data), res)
+	if err != nil {
+
+		fmt.Println("INI ERROR yA", err)
+	}
+	fmt.Println(res.Data.Id)
+}
