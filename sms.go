@@ -33,8 +33,10 @@ func (gateway *SmsGateway) SendSmsOtp(req *VerihubsSmsOtpRequest) (response *Ver
 	}
 	log.Debugf("STATUSS", httpStatus)
 	if httpStatus != VerihubsSuccessRequest {
+		resp.Code = httpStatus
 		resp.ErrorStatus = true
 	} else {
+		resp.Code = httpStatus
 		resp.ErrorStatus = false
 	}
 
@@ -60,8 +62,10 @@ func (gateway *SmsGateway) VerifySmsOtp(req *VerihubsOtpVerifyRequest) (response
 		return nil, err
 	}
 	if httpStatus != VerihubsSuccess {
+		resp.Code = httpStatus
 		resp.ErrorStatus = true
 	} else {
+		resp.Code = httpStatus
 		resp.ErrorStatus = false
 	}
 
@@ -87,8 +91,10 @@ func (gateway *SmsGateway) SendWhatsAppOtp(req *VerihubsWhatsappOtpRequest) (res
 	}
 
 	if httpStatus != VerihubsSuccessRequest {
+		resp.Code = httpStatus
 		resp.ErrorStatus = true
 	} else {
+		resp.Code = httpStatus
 		resp.ErrorStatus = false
 	}
 
@@ -115,8 +121,10 @@ func (gateway *SmsGateway) VerifyOtp(req *VerihubsOtpVerifyRequest) (response *V
 	}
 
 	if httpStatus != VerihubsSuccess {
+		resp.Code = httpStatus
 		resp.ErrorStatus = true
 	} else {
+		resp.Code = httpStatus
 		resp.ErrorStatus = false
 	}
 

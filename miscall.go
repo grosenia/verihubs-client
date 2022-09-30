@@ -29,8 +29,10 @@ func (gateway *SmsGateway) RequestMiscallOtp(req *VerihubsMisscallOtpRequest) (r
 
 	log.Debugf("INI RESPONNYA +++++", httpStatus)
 	if httpStatus != VerihubsSuccessRequest {
+		resp.Code = httpStatus
 		resp.ErrorStatus = true
 	} else {
+		resp.Code = httpStatus
 		resp.ErrorStatus = false
 	}
 
@@ -57,8 +59,10 @@ func (gateway *SmsGateway) RequestMiscallVerifyOtp(req *VerihubsOtpVerifyRequest
 	}
 
 	if httpStatus != VerihubsSuccess {
+		resp.Code = httpStatus
 		resp.ErrorStatus = true
 	} else {
+		resp.Code = httpStatus
 		resp.ErrorStatus = false
 	}
 

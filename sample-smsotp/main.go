@@ -48,16 +48,17 @@ func main() {
 		return
 	}
 
-	if resp.ErrorStatus && resp.Code != 201 {
+	if resp.ErrorStatus {
 		// Ada error
 		fmt.Println("Error: ", resp.Error())
 		return
 	}
 
-	fmt.Println("Verihubs response: ")
+	fmt.Println("Verihubs response 1: ")
 	fmt.Println(resp)
 	fmt.Println("TrxID: ", resp.SessionId)
 	fmt.Println("Token: ", resp.OTP)
+	fmt.Println("Token: ", resp.Code)
 
 	fmt.Println("Test Verify Fail: ")
 
@@ -77,7 +78,7 @@ func main() {
 		fmt.Println("Error: ", respVerify.Error())
 	}
 
-	fmt.Println("Verihubs response: ")
+	fmt.Println("Verihubs response 2: ")
 	fmt.Println(respVerify)
 	fmt.Println("Error Status: ", respVerify.ErrorStatus)
 	fmt.Println("Error Code: ", respVerify.Code)
@@ -100,7 +101,7 @@ func main() {
 		fmt.Println("Error: ", respVerifySuccess.Error())
 	}
 
-	fmt.Println("Verihubs response: ")
+	fmt.Println("Verihubs response 3: ")
 	fmt.Println(respVerifySuccess)
 	fmt.Println("Error Status: ", respVerifySuccess.ErrorStatus)
 	fmt.Println("Error Code: ", respVerifySuccess.Code)

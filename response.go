@@ -32,14 +32,14 @@ func (fi *FlexInt) UnmarshalJSON(b []byte) error {
 
 // VerihubsSmsOtpResponse Verihubs SMSOTP Response
 type VerihubsSmsOtpResponse struct {
-	Code         FlexInt `json:"code"`
-	Message      string  `json:"message"`
-	OTP          string  `json:"otp"`
-	MSISDN       string  `json:"msisdn"`
-	SessionId    string  `json:"session_id"`
-	TryCount     int     `json:"try_count"`
-	SegmentCount int     `json:"segment_count"`
-	ErrorStatus  bool    `json:"-"`
+	Code         int    `json:"code"`
+	Message      string `json:"message"`
+	OTP          string `json:"otp"`
+	MSISDN       string `json:"msisdn"`
+	SessionId    string `json:"session_id"`
+	TryCount     int    `json:"try_count"`
+	SegmentCount int    `json:"segment_count"`
+	ErrorStatus  bool   `json:"-"`
 }
 
 func (e VerihubsSmsOtpResponse) Error() string {
@@ -48,9 +48,9 @@ func (e VerihubsSmsOtpResponse) Error() string {
 
 // VerihubsSmsOtpVerifyResponse Verihubs SMSOTP Verify Response
 type VerihubsOtpVerifyResponse struct {
-	Code        FlexInt `json:"code"`
-	Message     string  `json:"message"`
-	ErrorStatus bool    `json:"-"`
+	Code        int    `json:"code"`
+	Message     string `json:"message"`
+	ErrorStatus bool   `json:"-"`
 }
 
 func (e VerihubsOtpVerifyResponse) Error() string {
@@ -59,13 +59,13 @@ func (e VerihubsOtpVerifyResponse) Error() string {
 
 // VerihubsWhatsappOtpResponse Verihubs WhatsappOTP Response
 type VerihubsWhatsappOtpResponse struct {
-	Code        FlexInt `json:"code"`
-	Message     string  `json:"message"`
-	OTP         string  `json:"otp"`
-	MSISDN      string  `json:"msisdn"`
-	SessionId   string  `json:"session_id"`
-	TryCount    int     `json:"try_count"`
-	ErrorStatus bool    `json:"-"`
+	Code        int    `json:"code"`
+	Message     string `json:"message"`
+	OTP         string `json:"otp"`
+	MSISDN      string `json:"msisdn"`
+	SessionId   string `json:"session_id"`
+	TryCount    int    `json:"try_count"`
+	ErrorStatus bool   `json:"-"`
 }
 
 func (e VerihubsWhatsappOtpResponse) Error() string {
@@ -78,6 +78,7 @@ type VerihubsMisscallOtpResponse struct {
 		SessionId string `json:"id"`
 		Status    int    `json:"status"`
 	}
+	Code        int    `json:"code"`
 	Message     string `json:"message"`
 	ErrorStatus bool   `json:"-"`
 }

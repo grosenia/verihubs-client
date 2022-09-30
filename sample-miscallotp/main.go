@@ -53,7 +53,7 @@ func main() {
 
 	fmt.Println("Citcall response: ", resp)
 	// fmt.Println(resp)
-	//fmt.Println("Code: ", resp.Code)
+	fmt.Println("Code: ", resp.Code)
 	fmt.Println("SessionId: ", resp.Data.SessionId)
 
 	var verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
@@ -72,10 +72,9 @@ func main() {
 		fmt.Println("Error: ", respVerify.Error())
 	}
 
-	fmt.Println("Verihubs response: ")
+	fmt.Println("Verihubs response 1: ")
 	fmt.Println(respVerify)
 	fmt.Println("Error Status: ", respVerify.ErrorStatus)
-	fmt.Println("Error Code: ", respVerify.Code)
 	fmt.Println("Error Info: ", respVerify.Message)
 
 	fmt.Println("Test Verify Success: ")
@@ -95,7 +94,7 @@ func main() {
 		fmt.Println("Error: ", respVerifySuccess.Error())
 	}
 
-	fmt.Println("Verihubs response: ")
+	fmt.Println("Verihubs response 2: ")
 	fmt.Println(respVerifySuccess)
 	fmt.Println("Error Status: ", respVerifySuccess.ErrorStatus)
 	fmt.Println("Error Code: ", respVerifySuccess.Code)
