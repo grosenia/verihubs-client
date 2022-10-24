@@ -100,7 +100,6 @@ func main() {
 	fmt.Println("Error Code: ", respVerifySuccess.Code)
 	fmt.Println("Error Info: ", respVerifySuccess.Message)
 
-	//
 }
 
 func setupClient() {

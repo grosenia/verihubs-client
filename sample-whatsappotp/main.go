@@ -27,15 +27,14 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "628002"
-	Content := []string{
-		"This is your OTP Code {{1}}. Please use only in {{2}}",
-	}
-	OTP := "234123"
-	TimeLimit := "300" // 5 minutes
-	Challenge := "update_account"
-	LangCode := "en"
-	TemplateName := "send_otp_template"
+	MSISDN := "6287771311133"
+	Content := []string{"2"}
+
+	OTP := "5501"
+	TimeLimit := "120" // 2 minutes
+	Challenge := "login"
+	LangCode := "id"
+	TemplateName := "grosenia_otp"
 
 	var request = &verihubsgo.VerihubsWhatsappOtpRequest{
 		MSISDN:    MSISDN,
@@ -48,6 +47,7 @@ func main() {
 		TemplateName: TemplateName,
 	}
 
+	fmt.Println(request)
 	resp, err := SmsGateway.SendWhatsAppOtp(request)
 
 	if err != nil {
@@ -70,7 +70,7 @@ func main() {
 
 	var verifyRequest = &verihubsgo.VerihubsOtpVerifyRequest{
 		MSISDN:    MSISDN,
-		OTP:       OTP,
+		OTP:       "4857",
 		Challenge: Challenge,
 	}
 	respVerify, err := SmsGateway.VerifySmsOtp(verifyRequest)
