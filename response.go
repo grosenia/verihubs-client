@@ -77,6 +77,7 @@ type VerihubsMisscallOtpResponse struct {
 	Data struct {
 		SessionId string `json:"id"`
 		Status    int    `json:"status"`
+		FlashCall string `json:"flashcall_prefix"`
 	}
 	Code        int    `json:"code"`
 	Message     string `json:"message"`
