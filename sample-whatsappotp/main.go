@@ -27,14 +27,14 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "6287771311133"
+	MSISDN := "628132456789"
 	Content := []string{"2"}
 
 	OTP := "5501"
 	TimeLimit := "120" // 2 minutes
 	Challenge := "login"
 	LangCode := "id"
-	TemplateName := "grosenia_otp"
+	TemplateName := "template_name"
 
 	var request = &verihubsgo.VerihubsWhatsappOtpRequest{
 		MSISDN:    MSISDN,

@@ -31,7 +31,7 @@ func main() {
 	Template := "Kode OTP Anda $OTP berlaku 5 menit"
 	OTP := "234123"
 	TimeLimit := "300" // 5 minutes
-	Challenge := "update_account"
+	Challenge := "tempalte_name"
 
 	var request = &verihubsgo.VerihubsSmsOtpRequest{
 		MSISDN:    MSISDN,

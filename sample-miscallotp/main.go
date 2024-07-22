@@ -26,10 +26,10 @@ func main() {
 
 	setupClient()
 
-	MSISDN := "6287771311133"
+	MSISDN := "628123456"
 	OTP := "9021"
 	TimeLimit := "300" // 5 minutes
-	Challenge := "update_account"
+	Challenge := "name_template"
 
 	var request = &verihubsgo.VerihubsMisscallOtpRequest{
 		MSISDN:    MSISDN,
