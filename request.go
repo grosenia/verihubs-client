@@ -28,13 +28,13 @@ type VerihubsOtpVerifyRequest struct {
 
 // VerihubsWhatsappOtpRequest Verihubs SMSOTP Request
 type VerihubsWhatsappOtpRequest struct {
-	MSISDN       string   `json:"msisdn"`
-	Content      []string `json:"content"`
-	OTP          string   `json:"otp"`
-	TimeLimit    string   `json:"time_limit"`
-	Challenge    string   `json:"challenge"`
-	LangCode     string   `json:"lang_code"`
-	TemplateName string   `json:"template_name"`
+	MSISDN string `json:"msisdn"`
+	//Content      []string `json:"content"`
+	OTP          string `json:"otp"`
+	TimeLimit    string `json:"time_limit"`
+	Challenge    string `json:"challenge"`
+	LangCode     string `json:"lang_code"`
+	TemplateName string `json:"template_name"`
 	//OtpLength    string   `json:"otp_length"`
 	//CallbackUrl string `json:"callback_url"`
 }
