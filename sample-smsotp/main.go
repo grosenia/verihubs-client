@@ -27,7 +27,7 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "628008"
+	MSISDN := "627564654654"
 	Template := "Kode OTP Anda $OTP berlaku 5 menit"
 	OTP := "234123"
 	TimeLimit := "300" // 5 minutes

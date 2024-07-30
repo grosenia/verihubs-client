@@ -27,8 +27,7 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "628132456789"
-	Content := []string{"2"}
+	MSISDN := "62894545454"
 
 	OTP := "5501"
 	TimeLimit := "120" // 2 minutes
@@ -38,7 +37,6 @@ func main() {
 
 	var request = &verihubsgo.VerihubsWhatsappOtpRequest{
 		MSISDN:    MSISDN,
-		Content:   Content,
 		OTP:       OTP,
 		Challenge: Challenge,
 		TimeLimit: TimeLimit,

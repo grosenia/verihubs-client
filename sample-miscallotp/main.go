@@ -26,7 +26,7 @@ func main() {
 
 	setupClient()
 
-	MSISDN := "628123456"
+	MSISDN := "6281234546"
 	OTP := "9021"
 	TimeLimit := "300" // 5 minutes
 	Challenge := "name_template"
