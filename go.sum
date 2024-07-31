@@ -4,6 +4,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
+github.com/ali-irawan/clogrus v1.0.0 h1:8406tfDJrcfHrmRV71IYLXzr/+7hRz1vtYYTbOTxGA4=
+github.com/ali-irawan/clogrus v1.0.0/go.mod h1:+BAhT+stS8w/JdFFkkNyEbuklyZG/gGxgIgUnlFi3bE=
 github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6/go.mod h1:grANhF5doyWs3UAsr3K4I6qtAmlQcZDesFNEHPZAzj8=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
 github.com/beorn7/perks v1.0.0/go.mod h1:KWe93zE9D1o94FZ5RNwFwVgaQK1VOXiVxmqh+CedLV8=
@@ -60,8 +62,6 @@ github.com/mitchellh/mapstructure v1.1.2/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh
 github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/nbs-go/clog v0.0.0-20190208050429-fe6737c53528 h1:9/6JVPlN9Dp+dNu7krMvQBrK+p2XExH54F8bAm7jmiU=
 github.com/nbs-go/clog v0.0.0-20190208050429-fe6737c53528/go.mod h1:3mSECOdmqpu6kXo+huDGiZLSWiSyMn2GZAuSJh6Dv54=
-github.com/nbs-go/clogrus v0.0.0-20190204070742-b05d2c3fe597 h1:a2agaCqcq/QY/Nbh7CS5/Ru8d8F1pbYBF2Eq/ibdO6I=
-github.com/nbs-go/clogrus v0.0.0-20190204070742-b05d2c3fe597/go.mod h1:l+S6AZEaeq4iK3ts6wF/9E2CFwRz0QxWOv1/Vzp0HKg=
 github.com/oklog/ulid v1.3.1/go.mod h1:CirwcVhetQ6Lv90oh/F+FBtV6XMibvdAFo93nm5qn4U=
 github.com/pelletier/go-toml v1.2.0 h1:T5zMGML61Wp+FlcbWjRDT7yAxhJNAiPPLOFECq181zc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
