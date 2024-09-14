@@ -46,3 +46,23 @@ type VerihubsMisscallOtpRequest struct {
 	TimeLimit string `json:"time_limit"`
 	Challenge string `json:"challenge"`
 }
+
+// VerihubsWhatsappMessage Verihubs Whatsapp Message Request
+type VerihubsWhatsappMessageRequest struct {
+	MSISDN    string          `json:"msisdn"`
+	LangCode  string          `json:"lang_code"`
+	Template  string          `json:"template_name"`
+	Content   ContentWhatsapp `json:"content"`
+	TimeLimit string          `json:"time_limit"`
+	Challenge string          `json:"challenge"`
+}
+
+type ContentWhatsapp struct {
+	BodyParams   []string    `json:"body_params"`
+	HeaderParams []string    `json:"header_params"`
+	ButtonParam  ButtonParam `json:"button_param"`
+}
+
+type ButtonParam struct {
+	URLParam string `json:"url_param"`
+}

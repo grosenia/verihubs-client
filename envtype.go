@@ -58,3 +58,8 @@ func (e EnvironmentType) CreateMiscalllUrl() string {
 func (e EnvironmentType) CreateMiscallVerifyUrl() string {
 	return e.String() + "/v2/flashcall/verify"
 }
+
+// CreateMessageInvoiceSalesOrder
+func (e EnvironmentType) CreateMessageWhatsapp() string {
+	return e.String() + "/v1/whatsapp/message/send"
+}

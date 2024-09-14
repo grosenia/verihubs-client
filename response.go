@@ -88,3 +88,16 @@ func (e VerihubsMisscallOtpResponse) Error() string {
 	fmt.Println("Error Code: ", e.Data.SessionId)
 	return fmt.Sprintf("%s ", e.Message)
 }
+
+// Verihubs response message whatsapp
+type VerihubsMessageWhatsappResponse struct {
+	SessionId   string `json:"id"`
+	MSISDN      string `json:"msisdn"`
+	Message     string `json:"message"`
+	ErrorStatus bool   `json:"-"`
+	Code        int    `json:"code"`
+}
+
+func (e VerihubsMessageWhatsappResponse) Error() string {
+	return fmt.Sprintf("[%d] %s", e.Code, e.Message)
+}
