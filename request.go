@@ -49,12 +49,10 @@ type VerihubsMisscallOtpRequest struct {
 
 // VerihubsWhatsappMessage Verihubs Whatsapp Message Request
 type VerihubsWhatsappMessageRequest struct {
-	MSISDN    string          `json:"msisdn"`
-	LangCode  string          `json:"lang_code"`
-	Template  string          `json:"template_name"`
-	Content   ContentWhatsapp `json:"content"`
-	TimeLimit string          `json:"time_limit"`
-	Challenge string          `json:"challenge"`
+	MSISDN   string          `json:"msisdn"`
+	LangCode string          `json:"lang_code"`
+	Template string          `json:"template_name"`
+	Content  ContentWhatsapp `json:"content"`
 }
 
 type ContentWhatsapp struct {
