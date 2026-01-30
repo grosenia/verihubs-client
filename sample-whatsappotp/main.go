@@ -27,7 +27,7 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "6287771311133"
+	MSISDN := "62989898989898"
 
 	OTP := "5501"
 	TimeLimit := "120" // 2 minutes

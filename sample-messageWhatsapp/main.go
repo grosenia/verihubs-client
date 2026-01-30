@@ -26,7 +26,7 @@ func main() {
 
 	setupClient()
 
-	MSISDN := "6287771311133"
+	MSISDN := "628372873827382"
 	LangCode := "id"
 	TemplateName := "notiffication_order"
 
