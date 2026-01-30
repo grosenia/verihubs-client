@@ -1,4 +1,4 @@
-module github.com/grosenia/verihubs-client
+module github.com/grosenia/verihubs-client/v2
 
 go 1.16
 
