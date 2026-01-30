@@ -41,12 +41,12 @@ func (e EnvironmentType) CreateSmsOtpVerifyURL() string {
 
 // CreateWhatsappOtpURL : Create SMSOTP URL
 func (e EnvironmentType) CreateWhatsappOtpURL() string {
-	return e.String() + "/v1/whatsapp/otp/send"
+	return e.String() + "/v2/whatsapp/otp/send"
 }
 
 // CreateWhatsappOtpVerifyURL : Create VERIFY URL
 func (e EnvironmentType) CreateWhatsappOtpVerifyURL() string {
-	return e.String() + "/v1/whatsapp/otp/verify"
+	return e.String() + "/v2/whatsapp/otp/verify"
 }
 
 // CreateMisscallURL : Create Misscall URL
@@ -61,5 +61,9 @@ func (e EnvironmentType) CreateMiscallVerifyUrl() string {
 
 // CreateMessageInvoiceSalesOrder
 func (e EnvironmentType) CreateMessageWhatsapp() string {
-	return e.String() + "/v1/whatsapp/message/send"
+	return e.String() + "/v2/whatsapp/message/send"
+}
+
+func (e EnvironmentType) VerifyWhatsappOtp() string {
+	return e.String() + "/v2/whatsapp/otp/verify"
 }
