@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	verihubsgo "github.com/grosenia/verihubs-client"
+	verihubsgo "github.com/grosenia/verihubs-client/v2"
 	viper "github.com/spf13/viper"
 )
 
