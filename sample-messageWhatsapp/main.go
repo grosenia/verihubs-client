@@ -26,13 +26,13 @@ func main() {
 
 	setupClient()
 
-	MSISDN := "6287771311133"
+	MSISDN := "628372873827382"
 	LangCode := "id"
-	TemplateName := "sales_invoice_grosenia"
+	TemplateName := "notiffication_order"
 
 	// Create the content object
 	content := verihubsgo.ContentWhatsapp{
-		BodyParams:   []string{"Reyvin", "6287771311133", "www.grosenia.co.id"},
+		BodyParams:   []string{"Reyvin", "209182918291089", "Rp 100.000", "20 Desember 2025", "http://xendit.com/aojsasjaiojsa"},
 		HeaderParams: []string{"string"},
 		ButtonParam:  verihubsgo.ButtonParam{},
 	}

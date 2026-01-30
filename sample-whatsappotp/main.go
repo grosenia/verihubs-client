@@ -27,13 +27,13 @@ func main() {
 	setupClient()
 
 	// Example
-	MSISDN := "62894545454"
+	MSISDN := "62989898989898"
 
 	OTP := "5501"
 	TimeLimit := "120" // 2 minutes
 	Challenge := "login"
 	LangCode := "id"
-	TemplateName := "template_name"
+	TemplateName := "otp_grosenia"
 
 	var request = &verihubsgo.VerihubsWhatsappOtpRequest{
 		MSISDN:    MSISDN,
@@ -71,7 +71,7 @@ func main() {
 		OTP:       "4857",
 		Challenge: Challenge,
 	}
-	respVerify, err := SmsGateway.VerifySmsOtp(verifyRequest)
+	respVerify, err := SmsGateway.VerifyOtp(verifyRequest)
 
 	if err != nil {
 		fmt.Println("Error server")
