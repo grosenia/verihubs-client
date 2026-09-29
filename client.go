@@ -103,6 +103,7 @@ func (c *Client) ExecuteRequest(req *http.Request, v interface{}) (httpStatus in
 
 	if v != nil {
 		if err = json.Unmarshal(resBody, v); err != nil {
+			log.Errorf("Verihubs response body failed to unmarshal (http status=%d): %s", res.StatusCode, string(resBody))
 			return httpStatus, err
 		}
 
