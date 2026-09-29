@@ -31,12 +31,13 @@ func (e EnvironmentType) String() string {
 
 // CreateSmsOtpURL : Create SMSOTP URL
 func (e EnvironmentType) CreateSmsOtpURL() string {
-	return e.String() + "/v1/otp/send"
+	// v1 (/v1/otp/send) is dead on Verihubs' side (404) as of 2026-09-29 — moved to v2.
+	return e.String() + "/v2/otp/send"
 }
 
 // CreateSmsOtpVerifyURL : Create VERIFY URL
 func (e EnvironmentType) CreateSmsOtpVerifyURL() string {
-	return e.String() + "/v1/otp/verify"
+	return e.String() + "/v2/otp/verify"
 }
 
 // CreateWhatsappOtpURL : Create SMSOTP URL
